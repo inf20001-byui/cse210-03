@@ -1,5 +1,6 @@
 from game.parachute import parachute
 from game.wordlist import word_list
+from game.format import color
 
 import random
 
@@ -16,7 +17,8 @@ class game_play:
         letters_guessed = []
         attempts = 0
 
-        print('Are you ready to jump?')
+        print('')
+        print(color.BOLD + 'Are you ready to jump?' + color.END)
         print(parachute(attempts))
         print(word_display)
         print('')
@@ -25,31 +27,34 @@ class game_play:
             letter = input('Guess a Letter [a-z]: ')
             if len(letter) == 1 and letter.isalpha():
                 if letter in letters_guessed:
-                    print('You already guessed that letter', letter)
+                    print(color.RED, 'You already guessed that letter', letter, color.END)
                     
                 elif letter not in word:
-                    print(letter, 'is not in the word!')
+                    print(color.RED, letter, 'is not in the word!', color.END)
                     attempts = attempts + 1
                     letters_guessed.append(letter)
                     print(parachute(attempts))
                     print(word_display)
                     print('')
                 else:
-                    print('You have guessed correctly', letter ,'is in the word!')
+                    print(color.GREEN, 'You have guessed correctly', letter ,'is in the word!', color.END)
                     letters_guessed.append(letter)
                     word_as_list = list(word_display)
                     print(parachute(attempts))
                     print(word_display)
                     print('')
             else:
-                print('Not a valid guess!')
+                print(color.RED,'Not a valid guess!', color.END)
                 
 
         if letter_correct:
-            print('Congrats, you guessed the word! You win!')
+            print(color.BOLD,color.BLUE,'Congrats, you guessed the word! You win!', color.END)
+            print('')
         else:
-            print('Sorry, you lost your parachute and crashed')
-            print('The correct word was ' + word )
+            print(color.BOLD, color.RED,'Sorry, you lost your parachute and crashed', color.END)
+            print('')
+            print(color.ORANGE,'The correct word was ' + word, color.END )
+            print('')
 
 
 class Director:   
