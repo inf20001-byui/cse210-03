@@ -1,4 +1,4 @@
-
+# displays the parachute based on how many incorrect guesses a user makes.
 def parachute(attempts):
 
     levels = [
