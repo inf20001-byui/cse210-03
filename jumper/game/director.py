@@ -1,3 +1,4 @@
+from telnetlib import STATUS
 from game.parachute import parachute
 from game.wordlist import word_list
 from game.format import color
@@ -45,8 +46,13 @@ class game_play:
                     #Statement to show that the letter guessed was correct
                     print(color.GREEN, 'You have guessed correctly', letter ,'is in the word!', color.END)
                     letters_guessed.append(letter)
-                    word_as_list = list(word_display)
+                    word_as_list = list(word)
                     print(parachute(attempts))
+                    for letter in word_as_list:
+                        if letter in letters_guessed:
+                            word_display = letter
+                        else:
+                            word_display += '-'
                     print(word_display)
                     print('')
             else:
