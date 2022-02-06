@@ -15,7 +15,7 @@ class game_play:
     #Class the controls the play of the game.
     def playing(word):
         # Setup for the basic function of the game.
-        word_display = '-' * len(word) # Display one dash for each letter until the letter is guessed.
+        self._word_display = '-' * len(word) # Display one dash for each letter until the letter is guessed.
         letter_correct = False # Sets that the word is solved to false.
         letters_guessed = [] # Keeps track of the letters already guessed by the player.
         attempts = 0 # Counts incorrect attempts at letters.
@@ -24,7 +24,7 @@ class game_play:
         print('')
         print(color.BOLD + 'Are you ready to jump?' + color.END)
         print(parachute(attempts))
-        print(word_display)
+        print(self._word_display)
         print('')
 
         while not letter_correct and attempts < 5:
@@ -40,7 +40,7 @@ class game_play:
                     attempts = attempts + 1
                     letters_guessed.append(letter)
                     print(parachute(attempts))
-                    print(word_display)
+                    print(self._word_display)
                     print('')
                 else:
                     #Statement to show that the letter guessed was correct
@@ -50,10 +50,10 @@ class game_play:
                     print(parachute(attempts))
                     for letter in word_as_list:
                         if letter in letters_guessed:
-                            word_display = letter
+                            self._word_display = letter
                         else:
-                            word_display += '-'
-                    print(word_display)
+                            self._word_display += '-'
+                    print(self._word_display)
                     print('')
             else:
                 #Basic error checking of a non-valid character is entered.
