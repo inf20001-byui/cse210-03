@@ -33,3 +33,4 @@ root                    (project root folder)
 * Celestina Lambert
 * Nahyra Viana
 * TJ Miller
+* Adam Dutson
