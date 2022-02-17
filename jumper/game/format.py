@@ -1,4 +1,7 @@
-# This class allows for the formating of text output.
+"""
+This class allows for the formating of text output.
+"""
+
 class color:
    BLUE = '\033[94m'
    GREEN = '\033[92m'
