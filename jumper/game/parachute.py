@@ -1,6 +1,15 @@
-# displays the parachute based on how many incorrect guesses a user makes.
 class display:
+  '''
+  Displays the parachute based on how many incorrect guesses a user makes.
+  
+  Args:
+    attempts (int): Uses the number of incorrect attempts to display the proper parachute.
+    level (list(string)): list of different levels of the parachute from full to crashed.
 
+  Returns:
+    string: returns the single entry from the list that corresponds to the number of incorrect attempts.
+  '''
+  
   def parachute(attempts):
 
     levels = [
