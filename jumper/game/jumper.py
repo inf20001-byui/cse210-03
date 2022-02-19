@@ -1,5 +1,5 @@
 from game.format import color
-from game.parachute import parachute
+from game.parachute import display
 from game.wordlist import word_list
 
 import random
@@ -23,7 +23,7 @@ class game_play:
         #Displays the beginning of the game.
         print('')
         print(color.BOLD + 'Are you ready to jump?' + color.END)
-        print(parachute(attempts))
+        print(display.parachute(attempts))
         print(self._word_display)
         print('')
 
@@ -39,7 +39,7 @@ class game_play:
                     print(color.RED, letter, 'is not in the word!', color.END)
                     attempts = attempts + 1
                     letters_guessed.append(letter)
-                    print(parachute(attempts))
+                    print(display.parachute(attempts))
                     print(self._word_display)
                     print('')
                 else:
@@ -47,7 +47,7 @@ class game_play:
                     print(color.GREEN, 'You have guessed correctly', letter ,'is in the word!', color.END)
                     letters_guessed.append(letter)
                     word_list = list(word)
-                    print(parachute(attempts))
+                    print(display.parachute(attempts))
                     self._word_display = ''
                     for letter in word_list:
                         if letter in letters_guessed:

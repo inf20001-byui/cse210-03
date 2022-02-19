@@ -1,5 +1,7 @@
 # displays the parachute based on how many incorrect guesses a user makes.
-def parachute(attempts):
+class display:
+
+  def parachute(attempts):
 
     levels = [
         #Initial Full Parachute
