@@ -6,11 +6,12 @@ from game.jumper import select_word
 class Director:
     """
     A person who directs the game.
-    The repsonsibility of this Class to start the game and control when it ends.   
+    The repsonsibility of this Class to start the game and control when it ends. 
+    It uses a while loop to ask if the player would like to play again after winning or losing a game.  
 
     Attributes:
-        word = The word to guess
-
+        get_word = The word to guess
+        playing = whether or not the game is over
 
     """
     def start_game(self):
